@@ -1,0 +1,46 @@
+disp("Jay Parab")
+clear all;
+function [yin, y]=net(j, w, x, temp, theta, yin, y)
+ yin = yin
+ y = y
+ for i = 1:4
+ temp = temp +(y(i)*w(i,j));
+ end
+ yin(j) = x1(j) + temp;
+ if(yin(j)> theta)
+ y(j) = yin(j);
+ elseif(yin(j) == theta)
+ y(j) = yin(j);
+ else
+ y(j) = -1
+ end
+ disp(yin)
+ disp(y)
+endfunction
+disp("Discrete Hopfeild network");
+theta = 0;
+x = [1 1 1 -1]
+w = x'*x
+disp("WEight matrix with self connection");
+disp(w);
+for i = 1:4
+ for j = 1:4
+ if(i==j)
+ end
+ end
+end
+disp("Weight atrix with no self Connection");
+disp(w);
+disp("Given input pattern for testing");
+x1 = [1 1 1 -1]
+y = [1 1 1 -1]
+temp = 0;
+disp("By Asynchronus updation method");
+disp("The net input calculated is:");
+yin = [0 0 0 0]
+[yin,y] = net(1,w,tep,theta,yin,y)
+[yin,y] = net(4,w,tep,theta,yin,y)
+[yin,y] = net(3,w,tep,theta,yin,y)
+[yin,y] = net(2,w,tep,theta,yin,y)
+disp("The Output calculated from net input is:");
+disp(y)
